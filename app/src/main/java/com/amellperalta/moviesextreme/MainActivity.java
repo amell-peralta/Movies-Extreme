@@ -1,7 +1,8 @@
 package com.amellperalta.moviesextreme;
 
 /**
- * Movies Extreme is an Android app that retrieves the most popular movies.
+ * Movies Extreme is an Android app that retrieves the most popular movies, displays them in a list,
+ * and allows the user to click a movie in the list to display more information about it.
  *
  * @author Amell Peralta
  * @date 3/28/2019
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(Void... voids) {
             String out = "";
             try {
-                String url = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=6322289cd522032d0541bee5e43aebaf";
+                String url = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=YOUR_API_KEY";
                 out = new Scanner(new URL(url).openStream(), "UTF-8").useDelimiter("\\A").next();
             } catch (IOException e) {
                 e.printStackTrace();
