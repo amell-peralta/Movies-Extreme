@@ -30,9 +30,9 @@ import java.util.Scanner;
 public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private List<String> movies;
-    private ArrayAdapter arrayAdapter;
     private List<String> dates;
     private List<String> overviews;
+    private ArrayAdapter arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.listView);
         movies = new ArrayList<>();
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, movies);
-        listView.setAdapter(arrayAdapter);
-
         dates = new ArrayList<>();
         overviews = new ArrayList<>();
+        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, movies);
+        listView.setAdapter(arrayAdapter);
 
         new MovieInfoDownloader().execute();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -60,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public class MovieInfoDownloader extends AsyncTask<Void, String, String> {
+    private class MovieInfoDownloader extends AsyncTask<Void, String, String> {
         @Override
         protected String doInBackground(Void... voids) {
             String out = "";
