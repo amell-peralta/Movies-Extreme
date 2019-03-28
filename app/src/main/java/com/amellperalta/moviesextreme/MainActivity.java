@@ -86,9 +86,6 @@ public class MainActivity extends AppCompatActivity {
                     dates.add(date);
                     overviews.add(overview);
                 }
-                if (movies.size() == 0) {
-                    movies.add("No movies found!");
-                }
                 arrayAdapter.notifyDataSetChanged();
             } catch (JSONException e) {
                 e.printStackTrace();
