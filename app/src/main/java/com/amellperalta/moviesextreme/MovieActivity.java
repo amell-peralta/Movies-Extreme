@@ -13,6 +13,7 @@ public class MovieActivity extends AppCompatActivity {
         String title = getIntent().getStringExtra("title");
         String releaseDate = getIntent().getStringExtra("release_date");
         String overview = getIntent().getStringExtra("overview");
+
         TextView titleTextView = findViewById(R.id.titleTextView);
         TextView dateTextView = findViewById(R.id.dateTextView);
         TextView overviewTextView = findViewById(R.id.overviewTextView);
